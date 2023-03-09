@@ -59,3 +59,9 @@ _______________________________
 05 suma srazek 12 mesic = 
 
 SUMX(FILTER(data,data[mesic]=12),data[srazky])
+
+___________________________________________
+
+06 pocet dnu v ruzyni kdy v danem roce neprselo = 
+
+COUNTX(FILTER(data,data[lokalita] = "RUZYNE" && data[srazky] = 0),data[srazky])
