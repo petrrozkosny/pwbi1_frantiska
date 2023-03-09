@@ -72,3 +72,10 @@ ___________________________________________________________________
 07 prvni datum maximalni teploty v lokalite ruzyne v danem roce = 
 MINX(FILTER(data,data[lokalita] =  "RUZYNE" && data[maximalni_teplota] =
 MAXX(FILTER(data,data[lokalita] = "RUZYNE"),data[maximalni_teplota])),data[datum])
+
+_________________________________________________________________
+
+08 suma srazek predchozi rok = 
+VAR rok = max(data[rok]) - 1
+return
+SUMX(FILTER(ALL(data),data[rok] = rok),data[srazky])
