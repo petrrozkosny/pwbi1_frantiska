@@ -65,3 +65,10 @@ ___________________________________________
 06 pocet dnu v ruzyni kdy v danem roce neprselo = 
 
 COUNTX(FILTER(data,data[lokalita] = "RUZYNE" && data[srazky] = 0),data[srazky])
+
+___________________________________________________________________
+
+
+07 prvni datum maximalni teploty v lokalite ruzyne v danem roce = 
+MINX(FILTER(data,data[lokalita] =  "RUZYNE" && data[maximalni_teplota] =
+MAXX(FILTER(data,data[lokalita] = "RUZYNE"),data[maximalni_teplota])),data[datum])
