@@ -90,3 +90,18 @@ _____________________________________________
 
 10 maximalni teplotu v dane lokalite v poslednim roce dane lokality = 
 MAXX(FILTER(data,data[rok] = max(data[rok])),data[maximalni_teplota])
+
+
+_________________________________________________
+
+11 suma srazek lucka = 
+-- suma srazek v danem roce ve vybrane lokalite
+SUM(data[srazky])
+-- PLUS
++
+-- suma srazek v danem roce za vsechny lokality
+SUMX(
+    FILTER(
+    ALL(data),
+    data[rok] = MAX(data[rok])),
+data[srazky])
