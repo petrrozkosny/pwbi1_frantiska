@@ -79,3 +79,9 @@ _________________________________________________________________
 VAR rok = max(data[rok]) - 1
 return
 SUMX(FILTER(ALL(data),data[rok] = rok),data[srazky])
+
+__________________________________________
+
+09 maximalni teplota lokality v roce 2000 = 
+-- maximalni teplota je ve sloupci maximalni_teplota, ze ktereho dale pocitame maximum
+MAXX(FILTER(data,data[rok] = 2000),data[maximalni_teplota])
