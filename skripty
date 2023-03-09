@@ -53,3 +53,9 @@ SUMX(
     data[rok] = 2000),
 --krok4: Funkce SUMX() agreguje sloupec srazky tabulky vracene funkci FILTER()
 data[srazky])
+
+_______________________________
+
+05 suma srazek 12 mesic = 
+
+SUMX(FILTER(data,data[mesic]=12),data[srazky])
