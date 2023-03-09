@@ -85,3 +85,8 @@ __________________________________________
 09 maximalni teplota lokality v roce 2000 = 
 -- maximalni teplota je ve sloupci maximalni_teplota, ze ktereho dale pocitame maximum
 MAXX(FILTER(data,data[rok] = 2000),data[maximalni_teplota])
+
+_____________________________________________
+
+10 maximalni teplotu v dane lokalite v poslednim roce dane lokality = 
+MAXX(FILTER(data,data[rok] = max(data[rok])),data[maximalni_teplota])
