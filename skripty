@@ -105,3 +105,14 @@ SUMX(
     ALL(data),
     data[rok] = MAX(data[rok])),
 data[srazky])
+
+_______________________________________________
+
+17 suma srazek mezirocne = 
+-- suma srazek v danem roce
+SUM(data[srazky])
+-- MÍNUS
+-
+-- suma srazek v predchozim roce
+SUMX(FILTER(all(data),data[rok] = SELECTEDVALUE(data[rok])-1
+),data[srazky])
