@@ -116,3 +116,15 @@ SUM(data[srazky])
 -- suma srazek v predchozim roce
 SUMX(FILTER(all(data),data[rok] = SELECTEDVALUE(data[rok])-1
 ),data[srazky])
+
+_________________________________________________
+
+18 suma srazek mezirocne ruzyne = 
+
+-- suma srazek v ruzyni v danem roce
+SUMX(FILTER(data,data[lokalita] = "ruzyne"),data[srazky])
+-- MÍNUS   
+-
+-- suma srazek v ruzyni v predchozim roce
+SUMX(FILTER(ALL(data),data[rok] = SELECTEDVALUE(data[rok])-1 
+&& data[lokalita] = "RUZYNE"),data[srazky])
